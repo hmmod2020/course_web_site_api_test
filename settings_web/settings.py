@@ -10,9 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
+from datetime import datetime
 from pathlib import Path
+from django.utils.encoding import smart_str
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.conf import settings
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -56,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'settings_web.urls'
 
@@ -119,7 +125,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

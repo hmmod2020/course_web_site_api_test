@@ -30,6 +30,7 @@ class files_ser(serializers.ModelSerializer):
 
 class userBoughtCourse_ser(serializers.ModelSerializer):
     class Meta:
+        unique_together = (('by_user', 'course'),)
         model = userBoughtCourse
         fields = '__all__'
 
@@ -52,4 +53,15 @@ class commentOnCourse_ser(serializers.ModelSerializer):
 class courseUserWatch_ser(serializers.ModelSerializer):
     class Meta:
         model = courseUserWatch
+        fields = '__all__'
+
+class wallet_ser(serializers.ModelSerializer):
+    class Meta:
+        model = Wallet
+        fields = '__all__'
+
+
+class transaction_ser(serializers.ModelSerializer):
+    class Meta:
+        model = transaction
         fields = '__all__'

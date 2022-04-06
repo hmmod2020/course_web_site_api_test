@@ -5,3 +5,4 @@ from courses_webSite.models import *
 
 admin.site.register(categorie)
 admin.site.register(courses)
+admin.site.register(Wallet)

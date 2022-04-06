@@ -63,6 +63,16 @@ class courseUserWatch(models.Model):
     course=models.ForeignKey(courses,on_delete=models.CASCADE)
     completionRate=models.IntegerField(default=0,blank=False,null=False)
 
+class Wallet(models.Model):
+    by_user = models.OneToOneField(User, on_delete=models.CASCADE)
+    amount=models.IntegerField(blank=True,null=True)
+
+class transaction(models.Model):
+    by_wallet=models.ForeignKey(Wallet,on_delete=models.CASCADE)
+    transactionType=models.CharField(max_length=30,blank=True,null=True)
+    amount=models.IntegerField(blank=True,null=True)
+    create_at=models.DateField(blank=True,null=True)
+
 
 class rateCourse(models.Model):
     by_user=models.ForeignKey(User,on_delete=models.CASCADE)
